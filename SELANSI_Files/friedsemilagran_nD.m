@@ -29,9 +29,9 @@ Xgrid=cell(dato.n_gene,1);
 % Time definition
 t0     = SLdato.Time_mesh(1);
 tmax   = SLdato.Time_mesh(2);
-nt     = SLdato.Time_mesh(3)*SLdato.Time_mesh(4);
-deltat = (tmax-t0)/nt;
-tl     = linspace(t0, tmax, nt + 1);
+nt     = SLdato.Time_mesh(3)*SLdato.Time_mesh(4) + 1;
+deltat = (tmax-t0)/(nt-1);
+tl     = linspace(t0, tmax, nt);
 fprintf('\n The time discretization is: %g \n',tl(2)-tl(1));
 
 % Initial conditions (Gaussian density function)
